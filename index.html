@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Encrypt/Decrypt</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+</head>
+
+<body>
+
+    <h1>Encrypt/Decrypt (<i>with CryptoJS</i>)</h1>
+    <h4>Key:</h4>
+    <input type="text" id="password"></input>
+    <h4>Decrypted:</h4>
+    <textarea id="decrypted"></textarea>
+    <h4>Encrypted:</h4>
+    <textarea id="encrypted"></textarea>
+
+    <div>
+        <button onclick="encrypt()">Encrypt</button>
+        <button onclick="decrypt()">Decrypt</button>
+    </div>
+
+    <script>
+        function encrypt() {
+            var password = document.getElementById('password').value;
+            var decrypted = document.getElementById('decrypted').value;
+            console.log("encrypting : " + decrypted);
+            var encrypted = CryptoJS.AES.encrypt(decrypted.toString(), password);
+            document.getElementById('encrypted').value = encrypted.toString();
+        }
+
+        function decrypt() {
+            var password = document.getElementById('password').value;
+            var encrypted = document.getElementById('encrypted').value;
+            console.log("decrypting : " + encrypted);
+            var decrypted = CryptoJS.AES.decrypt(encrypted.toString(), password);
+            document.getElementById('decrypted').value = decrypted.toString(CryptoJS.enc.Utf8);;
+        }
+    </script>
+</body>
+
+</html>
