@@ -5,20 +5,30 @@
     <meta charset="utf-8">
     <title>Encrypt/Decrypt</title>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <style>
+        html, body { padding: 0px; }
+        body { margin: 10px;}
+        h1, h4 { font-family: sans-serif; }
+        h1 { color: #224466}
+        textarea, input { width: 99%; border: 1px solid #333; }
+        button { width: 100%; margin-top: 30px; background: #224466; padding: 1%; border: 0px; color:#fff; }
+    </style>
 </head>
 
 <body>
 
     <h1>Encrypt/Decrypt (<i>with CryptoJS</i>)</h1>
-    <h4>Key:</h4>
+    <h4>Password:</h4>
     <input type="text" id="password"></input>
     <h4>Decrypted:</h4>
     <textarea id="decrypted"></textarea>
-    <h4>Encrypted:</h4>
-    <textarea id="encrypted"></textarea>
-
     <div>
         <button onclick="encrypt()">Encrypt</button>
+    </div>
+
+    <h4>Encrypted:</h4>
+    <textarea id="encrypted"></textarea>
+    <div>
         <button onclick="decrypt()">Decrypt</button>
     </div>
 
